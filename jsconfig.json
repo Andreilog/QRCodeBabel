@@ -1,9 +1,10 @@
 {
     "compilerOptions": {
         "target": "es6",
-        "checkJs": true
+        "checkJs": true,
+        "jsx": "react"
     },
-    "includ": [
+    "include": [
         "src/**/*"
     ],
     "exclude": [
