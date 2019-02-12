@@ -1,0 +1,13 @@
+{
+  "name": "babel-qrcode-list",
+  "version": "1.0.0",
+  "description": "Babel version of QR Code List client app",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrei Nicolescu",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  }
+}
