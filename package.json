@@ -4,6 +4,8 @@
   "description": "Babel version of QR Code List client app",
   "scripts": {
     "babel-build": "./node_modules/.bin/babel ./src --out-dir ./dist",
+    "webpack-build": "./node_modules/.bin/webpack --mode development",
+    "webpack-build-prod": "./node_modules/.bin/webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Andrei Nicolescu",
@@ -11,7 +13,10 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
-    "babel-preset-es2015": "^6.24.1"
+    "babel-loader": "^7.1.5",
+    "babel-preset-es2015": "^6.24.1",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3"
   },
   "dependencies": {
     "eslint": "^5.13.0"
