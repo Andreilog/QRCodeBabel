@@ -1,12 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { UrlList } from './components/UrlList';
 
 const App = () => (
-    <div>
-        <h1>Hello world!!</h1>
-    </div>);
+    <UrlList/>
+);
 
-const root = document.getElementById('root');
-console.log(root);
-
-ReactDOM.render(<App/>, root);
+const rootElem = document.getElementById('root');
+ReactDOM.render(<App/>, rootElem);
