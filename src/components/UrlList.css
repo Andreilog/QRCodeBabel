@@ -1,21 +1,17 @@
-/* Tooltip text  */
 .tooltip {
     position: relative;
     display: inline-block;
 }
 
 .tooltip .tooltipImage {
+    position: absolute;
     visibility: hidden;
     width: 204px;
     height: 204px;
-    padding: 5px 0;
-
-    position: absolute;
+    border: 1px solid black;
     z-index: 1;
 }
 
-/* Show the tooltip text when you mouse over the tooltip container */
-.tooltip:hover .tooltipImage{
+.tooltip:hover .tooltipImage {
     visibility: visible;
-    opacity: 1;
 }
