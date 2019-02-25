@@ -6,7 +6,10 @@ export class UrlListService {
 
   getAll() {
     return new Promise((resolve, reject) => {
-      axios.get(this._url).then( response => resolve(response.data) );
+      axios.get(this._url).then( response => resolve(response.data) ).catch( reason => {
+        console.error(reason);
+        reject(reason);
+      })
     });
   }
 
@@ -16,7 +19,10 @@ export class UrlListService {
         (response) => {
           resolve(response.data.find(item => item.title === title));
         }
-      );
+      ).catch( reason => {
+        console.error(reason);
+        reject(reason);
+      });
     })
   }
 

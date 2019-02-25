@@ -1,6 +1,7 @@
 export class UrlItemModel {
-    title = '';
-    url = '';
+
+    title = undefined;
+    url = undefined;
 
     constructor(title, url) {
         if (title) {

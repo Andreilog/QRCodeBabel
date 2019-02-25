@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { UrlListService } from '../services/urlList';
+import { UrlListService } from '../services/urlList.service';
 import styles from './UrlList.css'
 
 export class UrlList extends Component {

@@ -1,0 +1,60 @@
+If you really feel the need to have typings when you are only writing plain Javascript code then this is how I managed to have them:
+
+1. Install tsc globally
+2. Copy src\services\urlList.js to src\services\urlList.ts
+2. Use:
+    tsc -d --lib es2015 --allowSyntheticDefaultImports --emitDeclarationOnly 
+        src\services\urlList.ts
+3. Check that you have \src\@types\urlList.d.ts
+4. Update urlList.d.ts accordinly to real types
+
+    For example this is original generated file:
+
+        export declare class UrlListService {
+            _url: string;
+            getAll(): Promise<{}>;
+            getByTitle(title: any): Promise<{}>;
+            getQRImageUrl(title: any): string;
+        }
+
+
+    And this is modified one:
+
+        import { UrlItemModel } from "../models/urlItem.model";
+
+        export declare class UrlListService {
+            // _url: string; // commented out private field
+            getAll(): Promise<UrlItemModel[]>;
+            getByTitle(title: string): Promise<UrlItemModel>;
+            getQRImageUrl(title: string): string;
+        }
+
+5. Now, when you use the UrlListService class you have proper IntelliSense base on urlList.d.ts file
+
+6. Note that urlItem.model.js could have the same need to have type file. Normally it doesn't for now but let's say it has. 
+    In this case we'll make the same as above:
+    Copy urlItem.model.js to urlItem.model.ts.
+    tsc -d --lib es2015 --allowSyntheticDefaultImports --emitDeclarationOnly 
+        src\models\urlItem.model.ts
+
+    Generated file looked like:
+
+    export declare class UrlItemModel {
+        title: any;
+        url: any;
+        constructor(title: any, url: any);
+    }
+
+    And this is modified one:
+
+    export declare class UrlItemModel {
+        title: string;
+        url: string;
+
+        constructor(title: string, url: string);
+    }
+
+    Delete urlItem.model.ts.
+    Now you have type definition for UrlItemModel also!
+
+7. Have fun!
